@@ -1,0 +1,43 @@
+package advika006;
+
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Rectangle2D;
+
+public class HutApplet extends Applet {
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        Graphics2D g2d = (Graphics2D) g;
+
+        // Draw the hut base (rectangle)
+        g2d.setColor(new Color(139, 69, 19)); // Brown color for the hut base
+        Rectangle2D.Double base = new Rectangle2D.Double(100, 150, 200, 150);
+        g2d.fill(base);
+
+        // Draw the roof (triangle)
+        g2d.setColor(new Color(139, 0, 0)); // Dark red color for the roof
+        int[] xPoints = {100, 200, 300};
+        int[] yPoints = {150, 50, 150};
+        g2d.fillPolygon(xPoints, yPoints, 3);
+
+        // Draw the door (rectangle)
+        g2d.setColor(new Color(160, 82, 45)); // Saddle brown color for the door
+        Rectangle2D.Double door = new Rectangle2D.Double(175, 220, 50, 80);
+        g2d.fill(door);
+
+        // Draw a window (rectangle)
+        g2d.setColor(Color.WHITE); // White color for the window
+        Rectangle2D.Double window = new Rectangle2D.Double(130, 180, 40, 40);
+        g2d.fill(window);
+
+        // Draw window bars (lines)
+        g2d.setColor(Color.BLACK); // Black color for the window bars
+        g2d.draw(new Line2D.Double(130, 200, 170, 200)); // Horizontal bar
+        g2d.draw(new Line2D.Double(150, 180, 150, 220)); // Vertical bar
+    }
+}
+

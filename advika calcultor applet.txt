@@ -1,0 +1,195 @@
+package advika006;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
+
+public class Calculator {
+
+	private JFrame frame;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calculator window = new Calculator();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Calculator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setForeground(new Color(204, 255, 153));
+		frame.setBackground(new Color(0, 51, 102));
+		frame.getContentPane().setBackground(new Color(102, 153, 204));
+		frame.getContentPane().setFont(new Font("Snap ITC", Font.BOLD | Font.ITALIC, 16));
+		frame.setBounds(100, 100, 460, 313);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.setForeground(UIManager.getColor("Button.disabledShadow"));
+		textField.setBackground(UIManager.getColor("CheckBox.darkShadow"));
+		textField.setBounds(107, 22, 228, 35);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JButton btnNewButton = new JButton("1");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton.setBackground(new Color(0, 0, 0));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setBounds(107, 68, 45, 35);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnC = new JButton("C");
+		btnC.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnC.setForeground(Color.BLUE);
+		btnC.setBackground(new Color(0, 0, 204));
+		btnC.setBounds(272, 68, 60, 35);
+		frame.getContentPane().add(btnC);
+		
+		JButton button = new JButton("2");
+		button.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button.setBackground(new Color(0, 0, 0));
+		button.setBounds(162, 68, 45, 35);
+		frame.getContentPane().add(button);
+		
+		JButton button_1 = new JButton("3");
+		button_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_1.setBackground(new Color(0, 0, 0));
+		button_1.setBounds(217, 68, 45, 35);
+		frame.getContentPane().add(button_1);
+		
+		JButton button_2 = new JButton("4");
+		button_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_2.setBackground(new Color(0, 0, 0));
+		button_2.setBounds(107, 114, 45, 35);
+		frame.getContentPane().add(button_2);
+		
+		JButton button_3 = new JButton("5");
+		button_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_3.setBackground(new Color(0, 0, 0));
+		button_3.setBounds(162, 114, 45, 35);
+		frame.getContentPane().add(button_3);
+		
+		JButton button_4 = new JButton("6");
+		button_4.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_4.setBackground(new Color(0, 0, 0));
+		button_4.setBounds(217, 114, 45, 35);
+		frame.getContentPane().add(button_4);
+		
+		JButton button_5 = new JButton("7");
+		button_5.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_5.setBackground(new Color(0, 0, 0));
+		button_5.setBounds(107, 160, 45, 35);
+		frame.getContentPane().add(button_5);
+		
+		JButton button_6 = new JButton("8");
+		button_6.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_6.setBackground(new Color(0, 0, 0));
+		button_6.setBounds(162, 160, 45, 35);
+		frame.getContentPane().add(button_6);
+		
+		JButton button_7 = new JButton("9");
+		button_7.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_7.setBackground(new Color(0, 0, 0));
+		button_7.setBounds(217, 160, 45, 35);
+		frame.getContentPane().add(button_7);
+		
+		JButton button_8 = new JButton(".");
+		button_8.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_8.setBackground(new Color(0, 0, 255));
+		button_8.setBounds(107, 206, 45, 35);
+		frame.getContentPane().add(button_8);
+		
+		JButton button_9 = new JButton("0");
+		button_9.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_9.setBackground(new Color(0, 0, 0));
+		button_9.setBounds(162, 206, 45, 35);
+		frame.getContentPane().add(button_9);
+		
+		JButton button_10 = new JButton("=");
+		button_10.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_10.setForeground(Color.RED);
+		button_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_10.setBackground(new Color(0, 0, 204));
+		button_10.setBounds(217, 206, 45, 35);
+		frame.getContentPane().add(button_10);
+		
+		JButton button_11 = new JButton("+");
+		button_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_11.setForeground(new Color(0, 128, 0));
+		button_11.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_11.setBackground(new Color(0, 102, 51));
+		button_11.setBounds(272, 108, 60, 25);
+		frame.getContentPane().add(button_11);
+		
+		JButton button_12 = new JButton("-");
+		button_12.setForeground(new Color(0, 128, 0));
+		button_12.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_12.setBackground(new Color(0, 102, 0));
+		button_12.setBounds(272, 144, 60, 25);
+		frame.getContentPane().add(button_12);
+		
+		JButton button_13 = new JButton("*");
+		button_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_13.setForeground(new Color(0, 128, 0));
+		button_13.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_13.setBackground(new Color(0, 102, 0));
+		button_13.setBounds(272, 180, 60, 25);
+		frame.getContentPane().add(button_13);
+		
+		JButton button_14 = new JButton("/");
+		button_14.setForeground(new Color(0, 128, 0));
+		button_14.setFont(new Font("Tahoma", Font.BOLD, 15));
+		button_14.setBackground(new Color(0, 102, 0));
+		button_14.setBounds(272, 216, 60, 25);
+		frame.getContentPane().add(button_14);
+	}
+}

@@ -178,7 +178,7 @@ public class User_form {
 		frame.getContentPane().add(lblDob);
 		
 		JSpinner spinner = new JSpinner();
-		spinner.setModel(new SpinnerNumberModel(new Integer(0), null, null, new Integer(1)));
+		spinner.setModel(new SpinnerNumberModel(0, 0, 31, 1));
 		spinner.setBounds(107, 241, 52, 20);
 		frame.getContentPane().add(spinner);
 		
@@ -187,6 +187,7 @@ public class User_form {
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JSpinner spinner_1 = new JSpinner();
+		spinner_1.setModel(new SpinnerNumberModel(1, 1, 12, 1));
 		spinner_1.setBounds(202, 241, 52, 20);
 		frame.getContentPane().add(spinner_1);
 		
@@ -195,6 +196,7 @@ public class User_form {
 		frame.getContentPane().add(lblMonth);
 		
 		JSpinner spinner_2 = new JSpinner();
+		spinner_2.setModel(new SpinnerNumberModel(0, 0, 2024, 1));
 		spinner_2.setBounds(304, 241, 52, 20);
 		frame.getContentPane().add(spinner_2);
 		

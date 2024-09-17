@@ -1,0 +1,205 @@
+package advika006;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextArea;
+import javax.swing.JRadioButton;
+import javax.swing.JPasswordField;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.FormSpecs;
+import com.jgoodies.forms.layout.RowSpec;
+import javax.swing.JCheckBox;
+import javax.swing.JSlider;
+import java.awt.Choice;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.SystemColor;
+import java.awt.TextArea;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerDateModel;
+import java.util.Date;
+import java.util.Calendar;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class User_form {
+
+	private JFrame frame;
+	private JPasswordField passwordField;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					User_form window = new User_form();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public User_form() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(173, 216, 230));
+		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 20));
+		frame.setBounds(100, 100, 450, 515);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("User Registration Page");
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setBounds(69, 11, 303, 37);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 30));
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Name");
+		lblNewLabel_1.setBounds(29, 60, 52, 19);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setBounds(29, 95, 74, 19);
+		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 15));
+		frame.getContentPane().add(lblPassword);
+		
+		JLabel lblAge = new JLabel("E-mail");
+		lblAge.setBounds(29, 133, 65, 19);
+		lblAge.setFont(new Font("Tahoma", Font.BOLD, 15));
+		frame.getContentPane().add(lblAge);
+		
+		JLabel lblGender = new JLabel("Gender");
+		lblGender.setBounds(29, 168, 74, 19);
+		lblGender.setFont(new Font("Tahoma", Font.BOLD, 15));
+		frame.getContentPane().add(lblGender);
+		
+		JLabel lblCourse = new JLabel("Course");
+		lblCourse.setBounds(29, 200, 74, 14);
+		lblCourse.setFont(new Font("Tahoma", Font.BOLD, 15));
+		frame.getContentPane().add(lblCourse);
+		
+		JLabel lblAddress = new JLabel("Address");
+		lblAddress.setBounds(29, 289, 74, 14);
+		lblAddress.setFont(new Font("Tahoma", Font.BOLD, 15));
+		frame.getContentPane().add(lblAddress);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(107, 59, 282, 22);
+		frame.getContentPane().add(textArea);
+		
+		JTextArea textArea_2 = new JTextArea();
+		textArea_2.setBounds(107, 126, 282, 22);
+		frame.getContentPane().add(textArea_2);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Male");
+		buttonGroup.add(rdbtnNewRadioButton);
+		rdbtnNewRadioButton.setBounds(106, 164, 52, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnFemale = new JRadioButton("Female");
+		buttonGroup.add(rdbtnFemale);
+		rdbtnFemale.setBounds(192, 164, 74, 23);
+		frame.getContentPane().add(rdbtnFemale);
+		
+		JRadioButton rdbtnOther = new JRadioButton("Other");
+		buttonGroup.add(rdbtnOther);
+		rdbtnOther.setBounds(285, 164, 74, 23);
+		frame.getContentPane().add(rdbtnOther);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(107, 95, 282, 20);
+		frame.getContentPane().add(passwordField);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("C++");
+		chckbxNewCheckBox.setBounds(106, 198, 52, 23);
+		frame.getContentPane().add(chckbxNewCheckBox);
+		
+		JCheckBox chckbxJava = new JCheckBox("Java");
+		chckbxJava.setBounds(192, 198, 52, 23);
+		frame.getContentPane().add(chckbxJava);
+		
+		JCheckBox chckbxPython = new JCheckBox("Python");
+		chckbxPython.setBounds(285, 198, 74, 23);
+		frame.getContentPane().add(chckbxPython);
+		
+		JButton btnNewButton = new JButton("Submit");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		buttonGroup_1.add(btnNewButton);
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setBackground(Color.BLUE);
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton.setBounds(107, 419, 127, 33);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnClear = new JButton("Clear ");
+		buttonGroup_1.add(btnClear);
+		btnClear.setForeground(Color.WHITE);
+		btnClear.setBackground(Color.RED);
+		btnClear.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnClear.setBounds(244, 419, 127, 33);
+		frame.getContentPane().add(btnClear);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Accept Terms and Conditions................");
+		rdbtnNewRadioButton_1.setBounds(154, 380, 184, 23);
+		frame.getContentPane().add(rdbtnNewRadioButton_1);
+		
+		TextArea textArea_1 = new TextArea();
+		textArea_1.setBounds(107, 289, 282, 76);
+		frame.getContentPane().add(textArea_1);
+		
+		JLabel lblDob = new JLabel("DOB");
+		lblDob.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblDob.setBounds(29, 242, 74, 14);
+		frame.getContentPane().add(lblDob);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setModel(new SpinnerNumberModel(new Integer(0), null, null, new Integer(1)));
+		spinner.setBounds(107, 241, 52, 20);
+		frame.getContentPane().add(spinner);
+		
+		JLabel lblNewLabel_2 = new JLabel("Date");
+		lblNewLabel_2.setBounds(169, 244, 35, 14);
+		frame.getContentPane().add(lblNewLabel_2);
+		
+		JSpinner spinner_1 = new JSpinner();
+		spinner_1.setBounds(202, 241, 52, 20);
+		frame.getContentPane().add(spinner_1);
+		
+		JLabel lblMonth = new JLabel("Month");
+		lblMonth.setBounds(264, 244, 43, 14);
+		frame.getContentPane().add(lblMonth);
+		
+		JSpinner spinner_2 = new JSpinner();
+		spinner_2.setBounds(304, 241, 52, 20);
+		frame.getContentPane().add(spinner_2);
+		
+		JLabel lblYear = new JLabel("Year");
+		lblYear.setBounds(366, 244, 58, 14);
+		frame.getContentPane().add(lblYear);
+	}
+}

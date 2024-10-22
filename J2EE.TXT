@@ -1,0 +1,279 @@
+Explain J2EE architecture.
+- The JEE platform provides the environment to develop enterprise applications / services using multitier architecture.
+
+- The highly intensified technology made the need for scalable, efficient, faster solutions for information management.
+
+- The JEE technology is rightly apt for meeting these requirements.
+
+- JEE provides a programming development environment which improves the productivity of development, standards for hosting / deploying enterprise applications.
+
+- The following are the tiers in JEE application
+
+Client Tier :
+
+- The client tier includes the web components such as Servlets, JSP or standalone Java Desktop applications.
+
+- This tier provides dynamic interfaces to the middle tier.
+
+Middle Tier:
+
+- This is also called as the server tier.
+
+- In the middle tier enterprise beans and web services encapsulate distributable business logic for the applications which are reusable.
+
+- The JEE application server contains the server-tier components which provides the platform for these web components for actions to be performed and data to be stored / persisted.
+
+Enterprise data tier :
+
+- The enterprise level data is stored / persisted preferably or typically in a relational database.
+
+- In this tier, the JEE applications comprises of components, containers and services.
+
+- All the web components (Servlets, JSP) provide dynamic requests and responses from a web page.
+
+- The EJB components contain the server-side business logic for enterprise applications.
+Explain J2EE is a container centric architecture.
+- A container acts as an interface between a platform-specific functionality and a component.
+
+- The component must be assembled before a web or enterprise bean or application client component execution, into a JEE application and deployed into its container.
+
+- The settings of a container can be customized for underlying support provided by the JEE server.
+
+- These include security, transaction management, and Java Naming and Directory Interface lookups.
+
+- The management of non configurable services such as servlet life cycle, enterprise bean life cycle, database connection, data persistence, database connection pooling also can be done by the container.
+Explain the four types of container that the J2EE specification defines.
+- A container is a runtime support of a system level entity [Applet, Servlet/JSP, EJB].
+
+- The four types of container that the J2EE specification defines are applet container, application-client container, web container and EJB container.
+
+1. Applet Container :
+
+- An applet is a java program that can be embedded into a web page.
+
+- Most of the web pages are authored in HTML.
+
+- To use an applet in HTML document , the tags and are used.
+
+- They are used to indicate to the browser that a java applet should be loaded.
+
+- These tags act as a container for the java applet definition. "Applet container manages the execution of applet, and contains the web browser."
+
+2. Application-client Container :
+
+- The Application Client Container (ACC) is a combination of Java classes, libraries, and other files.
+
+- They are used to distribute along with java client programs that execute on their own JVM.
+
+- The execution of the application client components is managed by the application-client container.
+
+- The ACC can take the responsibility to collect user name and password which is treated as authentication data.
+
+3. Web Container :
+
+- A web container is a part of web server.
+
+- It provides the run time environment to execute a web application such as a servlet, JSP.
+
+- A servlet container translates the URL requests into servlet requests.
+
+- The JSP implicit objects such as request, response, out, page, pageContext etc., are exposed by JSP container.
+
+4. EJB Container :
+
+- The EJB container, like other containers provides run-time environment to execute EJB components such as enterprise beans.
+
+- An EJB container manages transactions, state management details, multi threading, connection pooling.
+
+- The applications are provided with security using EJB container.
+
+- All database access required by the entity bean will be handled by the EJB container.
+Explain the J2EE container architecture.
+J2EE Container Architecture :
+
+- The J2EE application components needs support at runtime.
+
+- This support is provided by J2EE containers.
+
+- They use protocols, methods of the containers to access other application components.
+
+- The containers of J2EE are:
+1. Web container
+2. EJB container
+
+1. The web container :
+
+- It is used to host web applications. It provides the run time environment to execute Servlet and JSP component types.
+
+2. EJB container :
+
+- The business logic is dealt by the server components called EJB components.
+
+- The access to local and remote enterprise beans is provided by the EJB container.
+
+- The operations of the three beans namely Entity Bean, Session Bean and Message-driven bean are handled by the EJB Container.
+Explain the technologies that J2EE platform provides for developing components.
+1. Servlet Technology :
+
+- It is considered as the foundation of web technologies.
+
+- It overcomes the limitations of CGI technology.
+
+- It is a server side component to serve the clients and to generate dynamic content.
+
+- Servlets interacts with web clients using the paradigm ‘request-response’.
+
+- All client requests are sent through web servers to the servlet container.
+
+- The servlet then process the request and sends the response back to the client.
+
+- Servlets are reliable, scalable, efficient and reusable server side components.
+
+2. JSP Technology :
+
+- It is the extension of servlet technology.
+
+- It is easy to author JSP without much knowledge of the supporting API.
+
+- JSP can be used to work with HTTP requests and HTTP responses, session management and so on.
+
+- It is easy to combine both static and dynamic content with JSP.
+
+- The factor to develop JSP technology is to use regular HTML tags.
+
+- The JSP author can place servlet or simple java code in the page by using special designated tags.
+
+- The entire JSP will be translated into Servlet and the servlet related code is communicated to container to run.
+
+3. EJB Technology :
+
+- EJB is a server-side web component.
+
+- It depends on other java technologies for proper functionality such as Remote Method Invocation(RMI).
+
+- RMI is used as a two protocol enterprise beans between an enterprise bean and its client.
+
+- EJB encapsulates the business logic.
+
+- All EJBs are developed, deployed and run only in an EJB container.
+
+- This is similar to servlets and JSP run in a web container.
+
+- EJB applications are easy to develop because the applications developer can concentrate on business logic.
+
+- The developer can utilize the services provided by the EJB container, like connection pooling and transactions.
+Explain the J2EE APIs, i.e. RMI/IIOP, JNDI, JDBC, Java Mail and JMS.
+RMI/IIOP :
+
+- RMI stands for Remote Method Invocation.
+
+- IIOP stands for Inter Internet-ORB Protocol.
+
+- RMI/IIOP API is used to write distributed objects using java technology, which enables communication between objects in the memory, across JVM and also physical devices.
+
+- RMI/IIOP yields the benefits of OOP such as inheritance, polymorphism and encapsulation and is platform independent.
+
+- In RMI/IIOP, the code related to network is written by applying the interface but not the implementations.
+
+- The operation can solely on the interface that object’s class.
+
+- RMI-IIOP relies on object serialization for passing parameters via remote method invocations.
+
+JNDI ( Java Naming and Directory Interface) API :
+
+- To enable java programs to access the naming and directory services, the JNDI API is utilized.
+
+- Naming services emphasizes on the services that are to associate names with objects.
+
+- We are familiar with naming systems such as the file system which has a directory or path associated it.
+
+- Surfing web is associated a name that is the URL called Domain Naming System.
+
+- EJB components of a J2EE application server, user profiles are associated in LDAP(Lightweight Directory Access Protocol) directory.
+
+- For example , JNDI is the best API to write a java application that is used for search utility over network-enabled desktop, class-browser or an address book search utility.
+
+JDBC(Java Database Connectivity) API :
+
+- Many java applications use a database and database accessing and programming is a significant role in web application development. JDBC is an API that enables the accessibility to a database in order to manipulate the database.
+
+- The JDBC API supports both two-tier and three-tier models for database access.
+
+Two-tier model : A java application interacts directly with the database.
+
+Three-tier model : introduces a middle-level server for execution of business logic: the middle tier to maintain control over data access.
+
+- The application that uses the JDBC implements the following sequence.
+
+1. Importing Packages
+2. Registering the JDBC Drivers
+3. Opening a Connection to a Database
+4. Creating a Statement Object
+5. Executing a query and Returning a Result Set Object
+6. Processing the Result Set
+7. Closing the Result Set and Statement Objects
+8. Closing the Connection
+
+Java Mail API:
+
+- Mailing and Messaging applications can be modelled or developed using Java Mail.
+
+- The e-mail messaging applications can be developed for both high-level implementation and low-level implementation.
+
+- That is, a small company which is heading towards growth can develop solutions which ensures the accessing to their mail server in an efficient manner.
+
+- A blue-chip company can focus on providing the access to industry-level access which is a wider reach and provides vast support.
+
+JMS :
+
+- Java Message Services is an API that enables the components of an application, could it be JSE or JEE component to provide messaging services such as create, send, receive and read messages.
+
+- Using the loosely coupled, reliable and asynchronous communications are enabled by JMS.
+
+- The JMS application contains the following parts :
+
+1.JMS Provider : It implements the JMS interface and provides the administration and control services for the messages. J2EE 1.3 includes the JMS Provider service.
+
+2.JMS Clients : These are the java applications that produces or consumes the messages.
+
+3. Messages : These are the objects that communicate the messages between clients.
+
+4. Administered Objects : They are the JMS objects created by the administrator that can be used by the clients. They are namely destinations and connection factories.
+
+5. Native Clients : These are the applications that use message client’s native client API instead of JMS API.
+What are the 3 different Java platform editions? Explain them.
+Java 2 Platform, Standard Edition (J2SE)
+Java 2 Platform, Enterprise Edition (J2EE)
+Java 2 Platform, MicroEdition (J2ME)
+
+Java 2 Platform, Standard Edition (JSE):
+
+- J2SE is used to develop stand alone / desktop portable java applications.
+
+- J2SE consists of two components. Core component and desktop component.
+
+- Core component provides back end functionality.
+
+- Desktop component provides GUI functionality.
+
+- J2SE consists of Java Development Kit and Java Runtime Environment.
+
+- JDK consists of java compiler and other related tools to enable the users to create java applications.
+
+- Java Runtime Environment consists of java virtual machine, libraries and all other components that are necessary to run a java application.
+
+Java 2 Platform, Enterprise Edition (JEE):
+
+- J2EE is a platform to develop multi-tier enterprise applications.
+
+- JEE includes Servlets API, Java Server Pages and Enterprise Java Beans.
+
+- It was built on J2SE technology.
+
+Java 2 Platform, Micro Edition (JME):
+
+- JME is the technology for micro electronic devices like PDAs, Mobile phones etc.
+
+- JME supports the flexibility for user interfaces, provides the security and uses the built-in network protocols for networked applications.
+
+- JME applications can be ported across different devices.

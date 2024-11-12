@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive Checklist</title>
+
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #444;
+        }
+
+        .checklist-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .checklist-header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f1f1f1;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        li.completed {
+            background-color: #d4edda;
+            text-decoration: line-through;
+            color: #6c757d;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.5);
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .clear-btn {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .clear-btn:hover {
+            background-color: #c82333;
+        }
+
+        .add-item-btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-item-btn:hover {
+            background-color: #218838;
+        }
+
+        .input-field {
+            padding: 10px;
+            width: calc(100% - 40px);
+            margin-right: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .error {
+            color: #dc3545;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Interactive Checklist</h1>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h2>Things To Do</h2>
+        </div>
+
+        <!-- Input field to add new items -->
+        <div class="input-wrapper">
+            <input type="text" id="newItem" class="input-field" placeholder="Enter a new item...">
+            <button class="add-item-btn" onclick="addItem()">Add Item</button>
+        </div>
+
+        <!-- Error message -->
+        <div id="error" class="error" style="display: none;">
+            Please enter a valid task.
+        </div>
+
+        <!-- Checklist -->
+        <ul id="checklist">
+            <!-- Dynamic list items will be added here -->
+        </ul>
+
+        <!-- Clear completed tasks button -->
+        <div class="actions">
+            <button class="clear-btn" onclick="clearCompleted()">Clear Completed Tasks</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to add a new item to the checklist
+        function addItem() {
+            const inputField = document.getElementById('newItem');
+            const newItemText = inputField.value.trim();
+            const errorDiv = document.getElementById('error');
+
+            if (newItemText === "") {
+                errorDiv.style.display = 'block'; // Show error message
+                return;
+            }
+
+            errorDiv.style.display = 'none'; // Hide error message
+
+            // Create a new list item
+            const li = document.createElement('li');
+            li.classList.add('checklist-item');
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.addEventListener('change', function () {
+                toggleCompleted(checkbox, li);
+            });
+
+            const label = document.createElement('label');
+            label.textContent = newItemText;
+
+            // Append checkbox and label to the list item
+            li.appendChild(checkbox);
+            li.appendChild(label);
+
+            // Add the new item to the list
+            const checklist = document.getElementById('checklist');
+            checklist.appendChild(li);
+
+            // Clear the input field
+            inputField.value = '';
+        }
+
+        // Function to toggle the "completed" state of a task
+        function toggleCompleted(checkbox, listItem) {
+            if (checkbox.checked) {
+                listItem.classList.add('completed');
+            } else {
+                listItem.classList.remove('completed');
+            }
+        }
+
+        // Function to clear completed tasks
+        function clearCompleted() {
+            const checklist = document.getElementById('checklist');
+            const completedItems = checklist.querySelectorAll('.completed');
+            completedItems.forEach(item => {
+                item.remove();
+            });
+        }
+    </script>
+
+</body>
+
+</html>
